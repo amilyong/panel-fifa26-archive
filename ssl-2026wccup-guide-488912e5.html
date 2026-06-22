@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes">
+    <title>2026世界杯 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f7fafc;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 1.5rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* 主视觉区 – 不喧宾夺主 */
+        .hero {
+            background: linear-gradient(145deg, #e5f0f7 0%, #d4e7f0 100%);
+            border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
+            padding: 2.8rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 6px 18px rgba(0, 40, 60, 0.06);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #0f2e3b;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #2c5a70;
+            max-width: 540px;
+            margin: 0.2rem auto 1.2rem auto;
+            font-weight: 400;
+            border-bottom: 2px solid #80b6cc;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .hero .badge-group {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem 1.2rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(2px);
+            font-size: 0.85rem;
+            padding: 0.25rem 1rem;
+            border-radius: 24px;
+            border: 1px solid #b6d4e4;
+            color: #1e4b5e;
+            display: inline-block;
+        }
+
+        /* 网格卡片区域 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.6rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 600px) {
+            .grid-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .grid-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 40, 60, 0.04);
+            border: 1px solid #dceaf2;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #90c2d9;
+            box-shadow: 0 14px 28px rgba(0, 60, 80, 0.08);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0d3b4d;
+            margin-bottom: 0.6rem;
+            border-left: 6px solid #4c9bbf;
+            padding-left: 0.7rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2a4353;
+            margin-bottom: 0.5rem;
+            line-height: 1.65;
+        }
+
+        .card .highlight {
+            background: #dceef5;
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            color: #10566e;
+            margin-top: 0.3rem;
+        }
+
+        .card-icon {
+            display: inline-block;
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+            opacity: 0.6;
+        }
+
+        /* 用途卡片 + 适合人群 混合区域，但用独立卡片展示 */
+        .purpose-group {
+            background: #ecf3f8;
+            border-radius: 2.2rem;
+            padding: 2rem 1.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .purpose-item {
+            flex: 1 1 180px;
+            min-width: 140px;
+        }
+
+        .purpose-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #0b3b4b;
+            margin-bottom: 0.3rem;
+            border-bottom: 2px solid #8dbed2;
+            display: inline-block;
+            padding-bottom: 2px;
+        }
+
+        .purpose-item p {
+            font-size: 0.9rem;
+            color: #254b5a;
+        }
+
+        .purpose-item .tag {
+            background: #cde1ec;
+            color: #06323f;
+            border-radius: 24px;
+            padding: 0.1rem 1rem;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 0.2rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 自然链接段落 — 用更温和的句子 */
+        .link-section {
+            background: #dae9f2;
+            border-radius: 2rem;
+            padding: 1.8rem 2.2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .link-section p {
+            font-size: 1.05rem;
+            color: #133f4f;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .link-section a {
+            color: #065e7a;
+            background: #ffffffd9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid #7eb7cf;
+            transition: 0.15s;
+            white-space: nowrap;
+        }
+
+        .link-section a:hover {
+            background: #ffffff;
+            border-color: #1f7b9b;
+            color: #003d52;
+            box-shadow: 0 2px 8px rgba(0,70,90,0.1);
+        }
+
+        /* 类似FAQ摘要卡片 */
+        .faq-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            background: white;
+            border-radius: 2rem;
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #c8deea;
+        }
+
+        .faq-item {
+            flex: 1 1 200px;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #0e4255;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .faq-item .q::before {
+            content: "⚬";
+            color: #39849e;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .faq-item .a {
+            font-size: 0.85rem;
+            color: #2c5d70;
+            margin-left: 1.3rem;
+            border-left: 2px solid #b3d1df;
+            padding-left: 0.8rem;
+        }
+
+        /* 提示条  */
+        .tip-line {
+            background: #cbe3ef;
+            border-radius: 40px;
+            padding: 0.7rem 1.5rem;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #064459;
+            margin-bottom: 1.8rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #5f7e8b;
+            padding: 1rem 0 0.5rem 0;
+            border-top: 1px solid #c3dae7;
+            margin-top: 1rem;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 2rem 1rem;
+            }
+            .purpose-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 主视觉 hero -->
+    <div class="hero">
+        <h1>2026 世界杯 · 简明导航</h1>
+        <div class="sub">信息与提醒 · 温和陪伴</div>
+        <div class="badge-group">
+            <span class="badge">赛前指南</span>
+            <span class="badge">官方渠道</span>
+            <span class="badge">理性访问</span>
+        </div>
+    </div>
+
+    <!-- 信息卡片网格：用途、场景等 -->
+    <div class="grid-cards">
+        <div class="card">
+            <div class="card-icon">📋</div>
+            <h2>了解赛事信息</h2>
+            <p>如果你希望了解与世界杯相关的日程、队伍或历史背景，可以前往相关平台查阅。保持信息清晰比快速点击更重要。</p>
+            <span class="highlight">信息核实为先</span>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔍</div>
+            <h2>查找官方动态</h2>
+            <p>许多赛事动态通过认证渠道发布。建议把收藏重点放在权威页面，而非非官方转载。留意访问环境的安全。</p>
+            <span class="highlight">认准标识</span>
+        </div>
+        <div class="card">
+            <div class="card-icon">🧭</div>
+            <h2>赛程与提醒</h2>
+            <p>赛程、分组、转播信息通常会在比赛前陆续更新。保持耐心，利用日历工具标记关键日期，比频繁刷新更高效。</p>
+            <span class="highlight">从容跟进</span>
+        </div>
+    </div>
+
+    <!-- 用途 & 适合人群 混合卡片（用左对齐样式） -->
+    <div class="purpose-group">
+        <div class="purpose-item">
+            <h3>📌 用途参考</h3>
+            <p>赛前浏览、信息确认、与朋友讨论时作为背景参考。不替代官方公告或直播渠道。</p>
+            <span class="tag">赛前准备</span>
+        </div>
+        <div class="purpose-item">
+            <h3>👥 适合人群</h3>
+            <p>初次接触世界杯的观众、希望快速了解框架的球迷、以及习惯在安静环境中查阅信息的人。</p>
+            <span class="tag">轻松入门</span>
+        </div>
+        <div class="purpose-item">
+            <h3>🧩 提醒事项</h3>
+            <p>请通过可信来源核实任何票务、直播或行程信息。避免在非安全网络环境下输入个人数据。</p>
+            <span class="tag">安全第一</span>
+        </div>
+    </div>
+
+    <!-- 自然链接段落 – 把“世界杯”嵌入句子 -->
+    <div class="link-section">
+        <p>
+            想要了解赛事整体框架，可以直接访问 <a href="https://ssl-2026wccup.com">世界杯</a> 的官方信息页面。
+            那里聚合了基础赛程、参赛队伍概况及常见问题。建议你在安静的网络环境下浏览，以获得更稳定的体验。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要卡片（轻量问答风格） -->
+    <div class="faq-mini">
+        <div class="faq-item">
+            <div class="q">什么时候开始关注比较合适？</div>
+            <div class="a">通常赛前半年至三个月，权威消息会逐步明朗。不必过早焦虑，保持订阅官方通知即可。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">如何分辨信息是否可靠？</div>
+            <div class="a">优先选择域名清晰、页面设计规范的站点。查看是否有官方合作标识或引用来源。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">需要提前注册或下载吗？</div>
+            <div class="a">大多数基础信息无需注册即可浏览。谨慎对待任何要求付费或扫码的页面。</div>
+        </div>
+    </div>
+
+    <!-- 访问提醒（温和口吻） -->
+    <div class="flex-center">
+        <div class="tip-line">🌿 适度查阅，保持从容。信息在精不在多。</div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        ⚽ 本页面为信息聚合卡，内容仅供参考。请以相关机构正式发布为准。
+    </div>
+
+</div>
+</body>
+</html>
