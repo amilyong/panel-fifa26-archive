@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 资料索引</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #f4efe9;
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+            color: #2b2b2b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fcf9f5;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+            padding: 3rem 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #3b322c;
+            border-left: 6px solid #9b7b5c;
+            padding-left: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7b6c5e;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px dashed #d9cec4;
+            padding-bottom: 0.8rem;
+        }
+
+        .hero-note {
+            background: #ede6dc;
+            padding: 1.6rem 2rem;
+            border-radius: 14px;
+            margin-bottom: 2.6rem;
+            font-style: normal;
+            border-left: 4px solid #b3957a;
+        }
+
+        .hero-note p {
+            font-size: 1.05rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #4c3f35;
+            margin: 2rem 0 1rem 0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: #c7b3a1;
+            margin-top: 6px;
+        }
+
+        .dir-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+            margin: 1.2rem 0 2rem 0;
+        }
+
+        .dir-card {
+            background: #f6f0e9;
+            border-radius: 16px;
+            padding: 1.5rem 1.6rem;
+            transition: background 0.2s;
+        }
+
+        .dir-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3d322c;
+            margin-bottom: 0.4rem;
+        }
+
+        .dir-card p {
+            font-size: 0.95rem;
+            color: #5a4d42;
+        }
+
+        .dir-card:hover {
+            background: #efe6db;
+        }
+
+        .info-block {
+            background: #fffcf7;
+            border: 1px solid #e3d8ce;
+            border-radius: 16px;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .info-block strong {
+            color: #3b2c22;
+        }
+
+        .tip-box {
+            background: #e9e0d5;
+            padding: 1.4rem 1.8rem;
+            border-radius: 16px;
+            border-left: 6px solid #a8896e;
+            margin: 2rem 0 1.8rem 0;
+        }
+
+        .tip-box p {
+            font-size: 0.98rem;
+        }
+
+        .faq-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .faq-item {
+            background: #f3ede6;
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #3d2f26;
+        }
+
+        .faq-item .a {
+            color: #5c4d40;
+            margin-top: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .ref-link {
+            background: #fffaf5;
+            padding: 1.2rem 1.8rem;
+            border-radius: 14px;
+            border: 1px solid #dacfc4;
+            margin: 2rem 0 0.5rem 0;
+            text-align: center;
+        }
+
+        .ref-link a {
+            color: #6b4f38;
+            text-decoration: none;
+            border-bottom: 1px dotted #b3957a;
+            font-weight: 500;
+        }
+
+        .ref-link a:hover {
+            color: #3d2b1e;
+            border-bottom: 1px solid #6b4f38;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #8f7d6e;
+            border-top: 1px solid #e0d5c9;
+            padding-top: 1.5rem;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 650px) {
+            .container { padding: 1.8rem 1.2rem; }
+            h1 { font-size: 1.7rem; padding-left: 1rem; }
+            .dir-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .hero-note { padding: 1.2rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>世界杯·资料索引</h1>
+    <div class="subhead">信息梳理 · 目录式知识入口</div>
+
+    <div class="hero-note">
+        <p>这里是一份围绕<span style="font-weight:600;">世界杯</span>所展开的轻量资料集。不同于赛程播报或即时比分，本页侧重对历史脉络、赛制沿革、记录档案与周边信息进行结构化整理。适合希望系统查阅、对比或引用原始素材的研究者与爱好者。</p>
+    </div>
+
+    <div class="section-title">资料单元</div>
+
+    <div class="dir-grid">
+        <div class="dir-card">
+            <h3>历届冠亚档案</h3>
+            <p>从1930到2022，决赛比分、举办国、金靴与金球得主，以表格与时间轴对照呈现。</p>
+        </div>
+        <div class="dir-card">
+            <h3>赛制演变笔记</h3>
+            <p>小组赛阶段、淘汰赛名额、加时与点球规则变迁，整理为简明编年体说明。</p>
+        </div>
+        <div class="dir-card">
+            <h3>球队·数据摘要</h3>
+            <p>参赛次数、胜率、净胜球分布、历史排名曲线，摘录自官方统计与权威档案。</p>
+        </div>
+        <div class="dir-card">
+            <h3>裁判与规则文档</h3>
+            <p>越位解释迭代、红黄牌制度引入、VAR启用节点，附国际足联规则原文节选。</p>
+        </div>
+    </div>
+
+    <div class="section-title">说明区</div>
+    <div class="info-block">
+        <p><strong>索引范围：</strong>本页面所指向的素材库位于 <strong>https://page-cup26na.com</strong>，内容涵盖赛事统计、文献摘录与多媒体资源链接。每份资料均标注来源与版本日期，便于回溯核实。建议配合原文或官方报告交叉阅读。</p>
+        <p style="margin-top:0.8rem;"><strong>使用方式：</strong>可按上方分类直接选取板块，也可通过全局搜索定位关键词。部分文件为PDF或压缩包格式，浏览器可直接打开。</p>
+    </div>
+
+    <div class="section-title">提示区</div>
+    <div class="tip-box">
+        <p>📌 查阅早期赛事记录时，请注意部分数据在1960年代之前存在统计口径差异（例如助攻定义、进球数是否含资格赛）。本索引已尽量在条目后附加注释说明差异来源。</p>
+        <p style="margin-top:0.6rem;">📌 若需引用某一届比赛的具体场次数据，建议同时核对当届官方技术报告与第三方统计平台，以获取最完整的变量（天气、场地、阵容变更等）。</p>
+    </div>
+
+    <div class="section-title">相关信息 · 常见检索焦点</div>
+    <div class="faq-summary">
+        <div class="faq-item">
+            <div class="q">▪ 哪几届世界杯的决赛进入加时赛？</div>
+            <div class="a">共计九届：1934、1966、1974、1978、1994、2006、2010、2014、2018（2022年决赛亦进入点球决胜）。详细赛况与时间线可查阅决赛档案页。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">▪ 参赛球队数量何时从16支扩到24支？</div>
+            <div class="a">1982年西班牙世界杯首次采用24队赛制，1998年法国世界杯进一步扩至32队。2026年将扩军至48队，相关赛制预案已在资料库中收录。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">▪ 历史总进球数最多的球员是谁？</div>
+            <div class="a">男子方面，米罗斯拉夫·克洛泽以16球居首；女子方面，玛塔以17球保持纪录（截至2023年）。射手榜附有每球对应的赛事与对手。</div>
+        </div>
+    </div>
+
+    <div class="ref-link">
+        <p>如需查阅完整的赛事记录、规则文献与统计表格，可访问 <a href="https://page-cup26na.com">世界杯</a> 资料库，内设全文检索与分类浏览。</p>
+    </div>
+
+    <div class="footer-note">
+        资料索引 · 版本 2025.03 · 所有内容仅供参考与学习研究
+    </div>
+
+</div>
+</body>
+</html>
