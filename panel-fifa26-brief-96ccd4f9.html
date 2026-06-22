@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>世界杯 · 稳定入口与浏览指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f3f9fc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1b2d3a;
+            line-height: 1.65;
+            padding: 20px 18px 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        /* 主视觉区 — 网格卡片式 hero */
+        .hero-card {
+            background: linear-gradient(145deg, #e2f0f5 0%, #d0e8ef 100%);
+            border-radius: 36px;
+            padding: 40px 28px 36px;
+            box-shadow: 0 12px 28px rgba(0, 60, 70, 0.08);
+            margin-bottom: 32px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border: 1px solid rgba(0, 130, 150, 0.08);
+        }
+        .hero-card h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #0b3b44;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        .hero-card .tagline {
+            font-size: 1.1rem;
+            color: #1b5a68;
+            background: rgba(255,255,255,0.5);
+            padding: 6px 14px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 4px;
+            backdrop-filter: blur(2px);
+            font-weight: 450;
+        }
+        .hero-card .intro-text {
+            margin-top: 28px;
+            font-size: 1rem;
+            color: #1d3f49;
+            max-width: 580px;
+        }
+        .hero-card .intro-text a {
+            color: #006a7a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+        .hero-card .intro-text a:hover {
+            color: #003d49;
+        }
+
+        /* 网格卡片布局 —— 信息卡片式核心 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 460px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+        }
+        .card-item {
+            background: white;
+            border-radius: 28px;
+            padding: 22px 20px 22px;
+            box-shadow: 0 4px 12px rgba(30, 90, 100, 0.04);
+            border: 1px solid rgba(0, 140, 160, 0.10);
+            transition: transform 0.1s ease, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-item:hover {
+            box-shadow: 0 8px 20px rgba(20, 90, 100, 0.06);
+            transform: translateY(-2px);
+        }
+        .card-item .emoji-head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+            font-weight: 540;
+            color: #0b4f5c;
+        }
+        .card-item .emoji-head span:first-child {
+            font-size: 1.5rem;
+        }
+        .card-item p {
+            font-size: 0.95rem;
+            color: #2c4a55;
+            margin-top: 4px;
+            flex: 1;
+        }
+        .card-item .subtle-link {
+            margin-top: 14px;
+            font-size: 0.9rem;
+            border-top: 1px solid #e4f0f4;
+            padding-top: 12px;
+            color: #2b6a78;
+        }
+        .card-item .subtle-link a {
+            color: #006174;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+        }
+        .card-item .subtle-link a:hover {
+            color: #003d4a;
+        }
+
+        /* 自然链接段落 + 提示区域 */
+        .narrative-block {
+            background: #ffffffde;
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 28px 26px 26px;
+            margin-top: 6px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(0, 128, 148, 0.08);
+            box-shadow: 0 6px 14px rgba(0, 50, 60, 0.02);
+        }
+        .narrative-block p {
+            margin-bottom: 18px;
+            font-size: 1rem;
+            color: #1b3e49;
+        }
+        .narrative-block p:last-of-type {
+            margin-bottom: 0;
+        }
+        .narrative-block a {
+            color: #006a7a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+        .narrative-block a:hover {
+            color: #003d49;
+        }
+
+        .faq-mini-wrap {
+            background: #e7f2f6;
+            border-radius: 28px;
+            padding: 24px 24px 28px;
+            margin: 12px 0 24px;
+            border: 1px solid #cce3e9;
+        }
+        .faq-mini-wrap h3 {
+            font-size: 1.2rem;
+            font-weight: 530;
+            color: #08424f;
+            margin-bottom: 14px;
+            letter-spacing: -0.01em;
+        }
+        .faq-mini-item {
+            margin-bottom: 16px;
+        }
+        .faq-mini-item strong {
+            display: block;
+            font-weight: 550;
+            color: #0b3e4a;
+            margin-bottom: 3px;
+        }
+        .faq-mini-item span {
+            font-size: 0.95rem;
+            color: #234f5c;
+        }
+
+        .extra-note {
+            background: transparent;
+            font-size: 0.92rem;
+            color: #3a6b78;
+            padding: 6px 0 12px;
+            border-top: 1px solid #cde2e8;
+            margin-top: 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #cce2e8;
+            margin: 24px 0 14px;
+            opacity: 0.5;
+        }
+
+        .footer-note {
+            text-align: left;
+            font-size: 0.85rem;
+            color: #4a727e;
+            padding-top: 10px;
+            border-top: 1px solid #d1e4ea;
+        }
+        .footer-note a {
+            color: #106773;
+            text-decoration: none;
+            border-bottom: 1px dotted #6f9caa;
+        }
+
+        /* 按钮感微小元素 */
+        .micro-button {
+            display: inline-block;
+            background: #d2e9f0;
+            border-radius: 30px;
+            padding: 5px 14px;
+            color: #0b4d5b;
+            font-size: 0.8rem;
+            font-weight: 480;
+            letter-spacing: 0.02em;
+            border: 1px solid #b1d3dd;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+
+        /* 移动端小优化 */
+        @media (max-width: 480px) {
+            .hero-card h1 {
+                font-size: 1.8rem;
+            }
+            .hero-card {
+                padding: 30px 20px 30px;
+            }
+        }
+        @media (min-width: 700px) {
+            .card-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 主视觉：网格卡片式 hero -->
+    <div class="hero-card">
+        <h1>世界杯 · 信息卡片</h1>
+        <div class="tagline">稳定入口 · 浏览指引</div>
+        <div class="intro-text">
+            从赛事动态到内容聚合，这里是一个围绕<a href="https://panel-fifa26.com">世界杯</a>所搭建的稳定页面。
+            无论关注赛程、球队记录还是当日资讯，这个卡片式系统提供了一种低干扰的浏览结构。
+        </div>
+    </div>
+
+    <!-- 用途卡片 + 适合人群 (网格) -->
+    <div class="card-grid">
+        <div class="card-item">
+            <div class="emoji-head">
+                <span>📋</span><span>用途卡片</span>
+            </div>
+            <p>将世界杯相关的页面、资料或常用功能归纳为独立模块，方便快速定位。每个卡片代表一个内容入口，减少重复翻阅。</p>
+            <div class="subtle-link">
+                <span class="micro-button">赛场动态</span>
+                <span class="micro-button">球队卡</span>
+                <span class="micro-button">记录簿</span>
+            </div>
+        </div>
+        <div class="card-item">
+            <div class="emoji-head">
+                <span>👥</span><span>适合人群</span>
+            </div>
+            <p>偶尔想浏览赛事信息的人、希望在一个地方看到多类内容的观赛者，以及偏爱卡片化信息呈现方式的用户。</p>
+            <div class="subtle-link">
+                <span class="micro-button">轻度读者</span>
+                <span class="micro-button">信息整理派</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自然链接段落（嵌入世界杯链接） -->
+    <div class="narrative-block">
+        <p>
+            就个人体验而言，把一些世界杯相关的条目放在一起，会比在多个页面间跳转轻松不少。比如这个页面里的卡片系统，
+            会让人更倾向于先浏览再决定点开什么。如果你正好需要一个稳定的阅读环境，<a href="https://panel-fifa26.com">世界杯</a>这个页面可以作为起点。
+            它不追求做成大而全的门户，而是希望提供一种平实的卡片式索引。
+        </p>
+        <p>
+            整理信息本身也是一种乐趣，尤其是当页面结构相对干净时。卡片之间没有过多干扰，每个模块承载自己的主题，
+            你可以依照自己的节奏去看。如果你也认同这种卡片浏览方式，不妨把<a href="https://panel-fifa26.com">世界杯</a>页面收藏起来。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 + 提示 -->
+    <div class="faq-mini-wrap">
+        <h3>常见想法摘要</h3>
+        <div class="faq-mini-item">
+            <strong>❓ 这个页面会频繁变动吗？</strong>
+            <span>内容结构以稳定为主，卡片模块可能会根据赛季微调，但整体布局保持统一。</span>
+        </div>
+        <div class="faq-mini-item">
+            <strong>❓ 卡片里显示什么？</strong>
+            <span>通常是与当前世界杯周期相关的条目，比如赛事回顾、球队卡片或观赛工具页，具体根据维护情况更新。</span>
+        </div>
+        <div class="faq-mini-item">
+            <strong>❓ 移动端查看友好吗？</strong>
+            <span>卡片采用响应式网格，手机屏幕下自动变为单列，字体和间距适配阅读。</span>
+        </div>
+        <div style="margin-top: 12px; font-size: 0.92rem; background: #dbeef4; border-radius: 24px; padding: 10px 18px;">
+            💡 提示：如果你希望更简洁地使用，可以把页面添加到主屏幕，它本身就是一个轻量信息卡片。
+        </div>
+    </div>
+
+    <!-- 额外自然段落，嵌入第二次链接（但同样严格为“世界杯”文本） -->
+    <div class="narrative-block" style="margin-top: 0;">
+        <p>
+            偶尔会有朋友问，为什么选择卡片而不是列表。其实没有太复杂的原因，只是觉得卡片天然的模块感让信息更独立。
+            <a href="https://panel-fifa26.com">世界杯</a>这个页面也是类似的想法——把不同内容放在独立的卡片内，
+            同时保留一条主线。浏览时不会觉得拥挤，也能随时回到卡片总览。
+        </p>
+        <p>
+            当然，每个人都有自己的偏好。如果你喜欢这种卡片叙事，可能会在这里找到一些浏览的节奏。
+        </p>
+    </div>
+
+    <!-- 页脚自然链接，但不可用“进入”等词，用文本整合 -->
+    <hr>
+    <div class="footer-note">
+        <span>2025 · 信息卡片式页面 · 基于稳定入口设计。关于 <a href="https://panel-fifa26.com">世界杯</a> 的内容索引仅作浏览参考。</span>
+        <br>
+        <span style="opacity: 0.7; font-size: 0.78rem;">页面结构随方向变化 · 蓝绿色点缀</span>
+    </div>
+
+</div>
+</body>
+</html>
