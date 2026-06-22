@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯赛事信息 · 快速识别站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fbf7f0;
+      font-family: 'Georgia', 'Noto Serif SC', 'Source Han Serif SC', serif;
+      color: #2c2b28;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 56px auto;
+    }
+
+    /* ===== Hero 区 ===== */
+    .hero {
+      text-align: center;
+      padding: 48px 24px 40px;
+      background: #f7f1e7;
+      border-radius: 28px;
+      margin-bottom: 48px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(100, 80, 50, 0.06);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #382f21;
+    }
+
+    .hero h1 small {
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 10px;
+      color: #6b5e4c;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      margin-top: 24px;
+      font-size: 1.15rem;
+      color: #4c4438;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      border-left: 3px solid #c6b296;
+      padding-left: 20px;
+    }
+
+    .hero .label-badge {
+      display: inline-block;
+      background: #ddd5c9;
+      color: #2f281b;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin-top: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    /* ===== 通用章节 ===== */
+    section {
+      margin-bottom: 42px;
+    }
+
+    h2 {
+      font-weight: 450;
+      font-size: 1.7rem;
+      color: #322c21;
+      margin-bottom: 20px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e2d7c9;
+    }
+
+    h3 {
+      font-weight: 450;
+      font-size: 1.25rem;
+      color: #40382c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    /* ===== 优势卡片 ===== */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 24px 0 16px;
+    }
+
+    .feature-card {
+      flex: 1 1 200px;
+      background: #f6efe6;
+      padding: 24px 18px;
+      border-radius: 24px;
+      box-shadow: 0 2px 10px rgba(60, 50, 30, 0.03);
+      border: 1px solid #ede4d8;
+      transition: all 0.15s ease;
+    }
+
+    .feature-card:hover {
+      background: #f2e9dd;
+      border-color: #d5c8b6;
+    }
+
+    .feature-card .card-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .feature-card .card-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #332b1f;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #51483b;
+      margin-bottom: 0;
+    }
+
+    /* ===== 引用块 & 提示框 ===== */
+    .quote-block {
+      background: #f1ede6;
+      border-left: 5px solid #ae9d86;
+      padding: 20px 24px;
+      margin: 28px 0;
+      border-radius: 0 18px 18px 0;
+      font-style: normal;
+      color: #3b3429;
+    }
+
+    .quote-block p {
+      margin-bottom: 6px;
+    }
+
+    .notice-box {
+      background: #efe9df;
+      border: 1px solid #d6caba;
+      padding: 18px 22px;
+      border-radius: 20px;
+      margin: 28px 0;
+      font-size: 0.95rem;
+      color: #3d3529;
+    }
+
+    .notice-box strong {
+      color: #4e3f2b;
+    }
+
+    /* ===== FAQ 摘要 ===== */
+    .faq-item {
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed #dad0c2;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #3a3125;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      color: #4e4538;
+      padding-left: 12px;
+      border-left: 2px solid #cbbca9;
+    }
+
+    /* ===== 底部链接 ===== */
+    .site-footer {
+      margin-top: 50px;
+      padding: 28px 0 18px;
+      border-top: 1px solid #ddd3c5;
+      font-size: 0.9rem;
+      color: #5f5544;
+      text-align: center;
+    }
+
+    .site-footer a {
+      color: #4d4233;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b7a992;
+      font-weight: 450;
+    }
+
+    .site-footer a:hover {
+      color: #1f1a10;
+      text-decoration-color: #7b6b55;
+    }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        padding-left: 14px;
+      }
+
+      .feature-grid {
+        flex-direction: column;
+      }
+
+      .feature-card {
+        flex: 1 1 auto;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Hero 区 -->
+    <div class="hero">
+      <h1>
+        世界杯资讯
+        <small>简明定位 · 快速识别用途</small>
+      </h1>
+      <p>
+        如果你正在寻找一个能清晰了解赛事动态与相关活动信息的页面，
+        下面整理了关于 <a href="https://zhs-wc26lottery.com">世界杯</a> 的主要用途说明和常见疑问。
+      </p>
+      <span class="label-badge">落地页 · 信息整理</span>
+    </div>
+
+    <!-- 介绍 + 优势区 -->
+    <section>
+      <h2>这个网站在做什么</h2>
+      <p>
+        许多用户初次进入站点时，往往需要花时间辨别内容方向。
+        本页面将 <strong>zhs-wc26lottery.com</strong> 的功能与特点整理成清晰条目，
+        帮助你快速判断这个围绕 <a href="https://zhs-wc26lottery.com">世界杯</a> 搭建的平台是否契合你的需求。
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="card-icon">⚽</span>
+          <div class="card-title">赛事关联</div>
+          <p>页面内容围绕世界杯主题组织，提供与大赛相关的信息入口与功能指引。</p>
+        </div>
+        <div class="feature-card">
+          <span class="card-icon">📋</span>
+          <div class="card-title">结构简洁</div>
+          <p>重点突出，减少无关干扰。适合想快速了解站点性质的浏览者。</p>
+        </div>
+        <div class="feature-card">
+          <span class="card-icon">🔍</span>
+          <div class="card-title">场景匹配</div>
+          <p>无论是查询基本规则、活动说明还是确认平台定位，都能在这里获得概括性答案。</p>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <p>💡 提示：如果你是因为「世界杯」关键词而来到这个页面，那么下方 FAQ 摘要可以帮助你进一步核实网站的实际用途与边界。</p>
+      </div>
+    </section>
+
+    <!-- 说明区 -->
+    <section>
+      <h2>主要特点说明</h2>
+      <p>
+        网站围绕 <strong>世界杯主题</strong> 构建了相对完整的信息框架。从目前公开的页面结构来看，
+        它并不只是一个简单的赛事日历或新闻聚合，而是整合了多种与赛事相关的交互模块与说明内容。
+        用户可以在站内了解到与世界杯关联的活动参与方式、规则摘要以及常见问题解答。
+      </p>
+      <p>
+        值得一提的是，整个站点的信息呈现方式偏向「说明型」而非「即时资讯型」，
+        更适合那些希望通读概要、一次性理清逻辑的访问者。对于只需要快速确认网站性质的用户而言，
+        这种设计反而降低了筛选成本。
+      </p>
+
+      <div class="notice-box">
+        <strong>📌 使用建议：</strong> 如果你是第一次访问，推荐先浏览 FAQ 区域，
+        再根据自身需求选择是否进一步探索 <a href="https://zhs-wc26lottery.com">世界杯</a> 相关功能。
+      </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+      <h2>常见疑问摘要</h2>
+      <div class="faq-item">
+        <div class="faq-q">Q：这个网站是官方世界杯站点吗？</div>
+        <div class="faq-a">A：不是。它是一个围绕世界杯主题提供资讯说明与功能引导的第三方平台，内容经整理后呈现，并非国际足联或官方机构页面。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q：我能在上面直接参与竞猜或活动吗？</div>
+        <div class="faq-a">A：网站上确实包含与世界杯相关的活动说明与交互入口，但具体参与规则、限制及适用范围建议以站内页面实际内容为准，本摘要仅做概述。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q：页面上的信息多久更新一次？</div>
+        <div class="faq-a">A：更新频率取决于站点维护计划。但就本介绍页而言，目的只是辅助识别，不承诺实时动态刷新。</div>
+      </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <footer class="site-footer">
+      <p>
+        本页面为独立整理介绍，旨在帮助用户快速理解
+        <a href="https://zhs-wc26lottery.com">世界杯</a> 相关网站的信息结构。
+        如需直接使用完整功能，请前往主站浏览。
+      </p>
+      <p style="margin-top: 12px; font-size: 0.8rem; color: #7a6f5d;">&copy; 信息参考页 · 内容仅供说明用途</p>
+    </footer>
+  </div>
+</body>
+</html>
