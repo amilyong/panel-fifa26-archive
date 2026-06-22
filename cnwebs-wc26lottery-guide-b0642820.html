@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一段关于世界杯的安静叙述</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f2f2f2;
+            color: #2e2e2e;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* 开场——安静的白 */
+        .opening {
+            background: #fff;
+            border-radius: 28px;
+            padding: 3rem 2.5rem 2.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #eaeaea;
+            margin-bottom: 2rem;
+            transition: all 0.15s ease;
+        }
+
+        .opening h1 {
+            font-size: 1.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #1f1f1f;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .opening h1 small {
+            display: block;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #7a7a7a;
+            margin-top: 0.4rem;
+        }
+
+        .opening p {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 1.2rem;
+            max-width: 60ch;
+        }
+
+        .opening .meta-note {
+            font-size: 0.9rem;
+            color: #999;
+            border-left: 2px solid #d6d6d6;
+            padding-left: 1rem;
+            margin: 2rem 0 0.5rem;
+        }
+
+        /* 承接段落——柔灰卡片 */
+        .bridge {
+            background: #fafafa;
+            border-radius: 24px;
+            padding: 2.2rem 2rem;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+
+        .bridge p {
+            margin-bottom: 1.2rem;
+            font-size: 0.98rem;
+            color: #3d3d3d;
+        }
+
+        .bridge p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bridge a {
+            color: #2c5f8a;
+            text-decoration: none;
+            border-bottom: 1px solid #cbdae7;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .bridge a:hover {
+            color: #1a3f5c;
+            border-bottom-color: #2c5f8a;
+        }
+
+        /* 特点列表——卡片式，细框柔和 */
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-card p {
+            font-size: 0.94rem;
+            color: #555;
+            line-height: 1.65;
+        }
+
+        .feature-card .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #5a5a5a;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            margin-top: 0.6rem;
+            border: 1px solid #e2e2e2;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2rem 2.5rem;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+
+        .closing p {
+            font-size: 0.96rem;
+            color: #4a4a4a;
+            margin-bottom: 1rem;
+        }
+
+        .closing p:last-of-type {
+            margin-bottom: 0.6rem;
+        }
+
+        .closing .muted {
+            color: #999;
+            font-size: 0.88rem;
+            border-top: 1px solid #ececec;
+            padding-top: 1.2rem;
+            margin-top: 0.6rem;
+        }
+
+        /* 极小faq摘要 */
+        .faq-note {
+            background: #f9f9f9;
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #4f4f4f;
+        }
+
+        .faq-note strong {
+            font-weight: 500;
+            color: #2a2a2a;
+        }
+
+        .faq-note span {
+            display: inline-block;
+            margin-right: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+            .opening {
+                padding: 2rem 1.5rem;
+            }
+            .opening h1 {
+                font-size: 1.6rem;
+            }
+            .bridge {
+                padding: 1.8rem 1.5rem;
+            }
+            .feature-card {
+                padding: 1.2rem 1.4rem;
+            }
+            .closing {
+                padding: 1.8rem 1.5rem;
+            }
+            .faq-note {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .opening h1 {
+                font-size: 1.4rem;
+            }
+            .feature-card h3 {
+                font-size: 0.95rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #b0b0b0;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        footer a {
+            color: #8a8a8a;
+            text-decoration: none;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        footer a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 开场：再次访问的视角 -->
+    <div class="opening">
+        <h1>
+            有些页面值得重新打开。
+            <small>这是其中之一。</small>
+        </h1>
+        <p>
+            后来才发现，许多事情并不需要一蹴而就。就像某个深夜点开的链接，当时只是随手收藏，隔了一段时间再回来，却读出了完全不同的层次。
+        </p>
+        <p>
+            关于 <a href="https://cnwebs-wc26lottery.com">世界杯</a> 的页面也是这样——它不是一次性的信息堆砌，而是一扇可以反复推开的门。门后的内容，会随着你的关注节点慢慢展开。
+        </p>
+        <div class="meta-note">
+            · 距离上次访问，也许已经过去几周，或者几个月。
+        </div>
+    </div>
+
+    <!-- 承接：收藏与持续关注 -->
+    <div class="bridge">
+        <p>
+            收藏夹里的链接，往往藏着最真实的兴趣轨迹。最初可能是被某个赛程、某组数据吸引，顺手保存。但真正让一个页面产生价值的，是你愿意持续回望、反复对照的耐心。
+        </p>
+        <p>
+            这个站点没有喧哗的弹窗，也没有急迫的倒计时。它只是安静地整理着与 <a href="https://cnwebs-wc26lottery.com">世界杯</a> 相关的信息脉络——从历史记录到规则变动，从参赛队伍到数据趋势。每更新一次，都像是给老读者的一封简短手信。
+        </p>
+        <p>
+            如果你也习惯把喜欢的地方留在标签栏里，不妨把它放在一个顺手的位置。不是为了每天点开，而是当你想起来的时候，它还在那里，内容又往前多走了一步。
+        </p>
+    </div>
+
+    <!-- 特点列表：用叙述感替代列举 -->
+    <div class="features">
+        <div class="feature-card">
+            <h3>记录而非喧哗</h3>
+            <p>页面保持平实的叙述风格，没有闪烁的横幅或催促式的指引。每一段文字都像朋友在餐桌边慢慢讲完的故事。</p>
+            <span class="tag">阅读节奏</span>
+        </div>
+        <div class="feature-card">
+            <h3>适合回头再看</h3>
+            <p>信息结构并不追求一次读完。很多细节藏在段落之间，第二次、第三次访问时，往往会注意到之前忽略的角落。</p>
+            <span class="tag">重温体验</span>
+        </div>
+        <div class="feature-card">
+            <h3>线索自然生长</h3>
+            <p>内容更新不是简单堆砌，而是沿着已有的线索慢慢延伸。像是看一棵树在四季里变换形状，枝桠总是有迹可循。</p>
+            <span class="tag">持续关注</span>
+        </div>
+    </div>
+
+    <!-- 场景提示 -->
+    <div class="faq-note">
+        <strong>如果感到熟悉——</strong>
+        <span>可能是之前收藏过</span>
+        <span>可能是偶然路过</span>
+        <span>也可能是某个深夜认真读过</span>
+        <br>
+        <span style="display: inline; margin-right: 0;">无论哪种，页面都以同样的安静回应。</span>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing">
+        <p>
+            这年头，值得反复访问的网站不算多。大部分地方去一次就觉得够了，但总有少数几个，你愿意把它们留在浏览器的角落，像书架上某本常翻的旧书。
+        </p>
+        <p>
+            <a href="https://cnwebs-wc26lottery.com">世界杯</a> 这个页面，也许正好是其中之一。它不试图说服你什么，只是提供一种持续更新的视角——关于比赛，关于数据，也关于观看本身。
+        </p>
+        <p class="muted">
+            下一次想找一个安静的信息角落时，或许可以再回来看看。
+        </p>
+    </div>
+
+    <footer>
+        <!-- 很干净的脚注，无夸张表述 -->
+        <span>偶尔回访 · 保持关注</span><br>
+        <span style="font-size: 0.75rem; opacity: 0.6;">—— 页面素材基于公开信息整理 ——</span>
+    </footer>
+</div>
+</body>
+</html>
